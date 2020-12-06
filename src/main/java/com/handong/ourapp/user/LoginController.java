@@ -26,7 +26,7 @@ public class LoginController{
 		}
 		UserVO loginvo = service.getUser(vo); if ( loginvo != null ){ // 로그인 성공 System.out.println("로그인 성공!");
 			session.setAttribute("login", loginvo);
-			returnURL = "redirect:/board/list"; }else { // 로그인 실패
+			returnURL = "redirect:/popular/popularlist"; }else { // 로그인 실패
 			System.out.println("로그인 실패!");
 			returnURL = "redirect:/login/login"; }
 			return returnURL;

@@ -18,17 +18,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-@RequestMapping(value="/board")
-public class BoardController{
+@RequestMapping(value="/food")
+public class FoodController{
 	
     
 	@Autowired
-	private BoardServiceImpl boardService;
+	private FoodServiceImpl foodService;
 	
-	@RequestMapping(value="/list",method=RequestMethod.GET)
-	public String boardlist(Model model) {
-		model.addAttribute("list",boardService.getBoardList());
-		return "list";
+	@RequestMapping(value="/foodlist",method=RequestMethod.GET)
+	public String foodlist(Model model) {
+		model.addAttribute("foodlist",foodService.getFoodList());
+		return "foodlist";
 	}
 	
 	@RequestMapping(value="/add",method=RequestMethod.GET)
@@ -37,38 +37,38 @@ public class BoardController{
 	}
 	   
 	@RequestMapping(value="/addok",method=RequestMethod.GET)
-	public String addPostOk(BoardVO vo) {
-		if(boardService.insertBoard(vo)==0)
+	public String addPostOk(FoodVO vo) {
+		if(foodService.insertFood(vo)==0)
 			System.out.println("데이터 추가 실패");
 		else
 			System.out.println("데이터 추가 성공");
-		return "redirect:list";
+		return "redirect:foodlist";
 	}
 	
 	@RequestMapping(value="/editform/{id}",method=RequestMethod.GET)
 	public String editPost(@PathVariable("id") int id, Model model) {
-		BoardVO boardVO =boardService.getBoard(id);
-		model.addAttribute("u", boardVO);
+		FoodVO popularVO =foodService.getFood(id);
+		model.addAttribute("u", popularVO);
 		return "editform";
 	}
 	
 	@RequestMapping(value="/editok",method=RequestMethod.POST)
-	public String editPostOk(BoardVO vo) {
-		if(boardService.updateBoard(vo)==0)
+	public String editPostOk(FoodVO vo) {
+		if(foodService.updateFood(vo)==0)
 			System.out.println("데이터 추가 실패");
 		else
 			System.out.println("데이터 추가 성공");
-		return "redirect:list";
+		return "redirect:foodlist";
 	}
 	
 	
 	@RequestMapping(value="/deleteok/{id}",method=RequestMethod.GET)
 	public String deletePostOk(@PathVariable("id") int id) {
-		if(boardService.deleteBoard(id)==0)
+		if(foodService.deleteFood(id)==0)
 			System.out.println("데이터 추가 실패");
 		else
 			System.out.println("데이터 추가 성공");
-		return "redirect:../list";
+		return "redirect:../foodlist";
 	}
 	   
 	   

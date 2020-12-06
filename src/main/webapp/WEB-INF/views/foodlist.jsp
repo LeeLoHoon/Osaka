@@ -7,19 +7,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>free board</title>
 <style>
-#list {
+#foodlist {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
-#list td, #list th {
+#foodlist td, #list th {
   border: 1px solid #ddd;
   padding: 8px;
   text-align:center;
 }
-#list tr:nth-child(even){background-color: #f2f2f2;}
-#list tr:hover {background-color: #ddd;}
-#list th {
+#foodlist tr:nth-child(even){background-color: #f2f2f2;}
+#foodlist tr:hover {background-color: #ddd;}
+#foodlist th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
@@ -31,25 +31,29 @@
 <body>
 <h1>자유게시판</h1>
 
-<table id="list" width="90%">
+<table id="foodlist" width="90%">
 <tr>
-	<th>Id</th>
-	<th>Category</th>
-	<th>Title</th>
-	<th>Writer</th>
-	<th>Content</th>
-	<th>Edit</th>
-	<th>Delete</th>
+	<th>Fid</th>
+	<th>Name</th>
+	<th>Description</th>
+	<th>Location</th>
+	<th>Phone</th>
+	<th>Photo</th>
+	<th>Likes</th>
+	<th>Regdate</th>
 </tr>
-<c:forEach items="${list}" var="u">
+<c:forEach items="${foodlist}" var="u">
 	<tr>
-		<td>${u.seq}</td>
-		<td>${u.category}</td>
-		<td>${u.title}</td>
-		<td>${u.writer}</td>
-		<td>${u.content}</td>
-		<td><a href="editform/${u.seq}">Edit</a></td>
-		<td><a href="deleteok/${u.seq}">Delete</a></td>
+		<td>${u.fid}</td>
+		<td>${u.name}</td>
+		<td>${u.description}</td>
+		<td>${u.location}</td>
+		<td>${u.phone}</td>
+		<td>${u.photo}</td>
+		<td>${u.likes}</td>
+		<td>${u.regdate}</td>
+		<td><a href="editform/${u.fid}">Edit</a></td>
+		<td><a href="deleteok/${u.fid}">Delete</a></td>
 	</tr>
 </c:forEach>
 </table>
