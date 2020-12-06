@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Popular">
+	<insert id="insertPopular">
+		insert into POPULAR (name, description, location, photo, likes) values
+		(#{name} , #{description} , #{location} ,  #{photo}, #{likes})
+	</insert>
+	<update id="updatePopular">
+		update POPULAR
+		set name=#{name}, description=#{description}, location=#{location}, 
+		photo=#{photo}, likes=#{likes} where pid=#{pid}
+	</update>
+	<delete id="deletePopular">
+		delete from POPULAR where pid=#{pid}
+	</delete>
+	<select id="getPopular" resultType="popular">
+		select * from POPULAR where pid=#{pid}
+	</select>
+	<select id="getPopularList" resultType="popular">
+		select * from POPULAR order by pid desc
+	</select>
+</mapper>
+

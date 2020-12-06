@@ -13,32 +13,34 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public class BoardDAO{
+public class FoodDAO{
 	
 	@Autowired
 	SqlSessionTemplate sqlSession;
 	
-	public int insertBoard(BoardVO vo) {
+	public int insertBoard(FoodVO vo) {
 		
 		
-		return sqlSession.insert("Board.insertBoard", vo);
+		return sqlSession.insert("Food.insertFood", vo);
 		
 	}
 	
-	public int deleteBoard(int seq) {
-		return sqlSession.delete("Board.deleteBoard", seq);
+	public int deleteFood(int seq) {
+		return sqlSession.delete("Food.deleteFood", seq);
 	}
 	
-	public int updateBoard(BoardVO vo) {
-		return sqlSession.update("Board.updateBoard", vo);
+	public int updateFood(FoodVO vo) {
+		return sqlSession.update("Food.updateFood", vo);
 	}
 
-	public BoardVO getBoard(int seq) {
-		return sqlSession.selectOne("Board.getBoard", seq);
+	public FoodVO getFood(int seq) {
+		return sqlSession.selectOne("Food.getFood", seq);
 	}
 	
-	public List<BoardVO> getBoardList() {
-		return sqlSession.selectList("Board.getBoardList");
+	public List<FoodVO> getFoodList() {
+		return sqlSession.selectList("Food.getFoodList");
 	}
 	
 }
+
+
