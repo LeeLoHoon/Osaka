@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+
+a{
+	cursor:pointer;
+}
+
 body {
 	font: 400 15px/1.8 Lato, sans-serif;
 	color: black;
@@ -288,4 +293,8 @@ textarea:hover {
 #edit td:hover {
 	background: linear-gradient(90deg, rgb(251, 194, 235),
 		rgb(166, 193, 238));
+}
+
+.navbar-brand{
+	cursor:pointer;
 }

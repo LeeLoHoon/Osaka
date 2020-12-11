@@ -2,6 +2,8 @@ package com.handong.ourapp.popular;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class PopularVO {
 
 	public int getPid() {
@@ -28,10 +30,10 @@ public class PopularVO {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public String getPhoto() {
+	public MultipartFile getPhoto() {
 		return photo;
 	}
-	public void setPhoto(String photo) {
+	public void setPhoto(MultipartFile photo) {
 		this.photo = photo;
 	}
 	public int getLikes() {
@@ -50,7 +52,7 @@ public class PopularVO {
 	private String name;
 	private String description;
 	private String location;
-	private String photo;
+	private MultipartFile photo;
 	private int likes;
 	private Date regdate;
 	

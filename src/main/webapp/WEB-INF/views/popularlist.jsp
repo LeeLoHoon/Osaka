@@ -79,7 +79,7 @@
 
 	<div class="w3-content" style="max-width: 1100px;">
 
-		<div id="first1">About Osaka</div>
+		<div id="first2">About Osaka</div>
 		<br> <br> <br>
 		<div id="contain">
 			<h1 align=center style="font-family: 'Nanum Gothic';">POPULAR</h1>
@@ -87,11 +87,41 @@
 			<p align=center style="font-family: 'Nanum Gothic';">
 				TripAndFood 중 Trip 부분입니다.<br> 다른 분들께서 오사카를 여행하면서 방문하고 직접 기록한
 				장소들을 둘러보세요!<br> 오사카를 여행할 때 갔던 장소들이나 사진들을 기록하고 공유하고 싶으신가요?<br>목록
-				제일 밑에 있는 버튼을 눌러 추억을 남겨보세요.
+				밑에 있는 버튼을 눌러 추억을 남겨보세요.
 			</p>
-			<br>
-			<br>
-			<br>
+			<br> <br> <input type="button" id="button2" value="여행지 작성하기"
+				onclick="location.href='add'"> <br> <br> <br>
+
+			<table id="popularlist" width="90%">
+				<tr>
+					<th>#</th>
+					<th>사진</th>
+					<th>설명</th>
+				</tr>
+				<c:forEach items="${popularlist}" var="u">
+					<tr>
+						<td width="10%" id="pid">${fn:length(popularlist)-status.index }</td>
+						<td width="30%" id="photo">
+						
+						<img
+							src="${u.getPhoto()}"
+							class="photo" height=150px>
+					</td>
+						<td id="td">
+							<ul id="tablelist">
+								<li id="name">${u.name}</li>
+								<li>${u.regdate}</li>
+								<li id="lo">${u.location}</li>
+								<li id="des">${u.description}</li>
+								<li id="last_list"><a href="editform/${u.pid}">편집하기</a> | <a
+									href="deleteok/${u.pid}">삭제하기</a></li>
+							</ul>
+						
+					</tr>
+				</c:forEach>
+			</table>
+<br><br><br>
+<!-- 
 			<table id="popularlist" width="90%">
 				<tr>
 					<th>#</th>
@@ -118,9 +148,15 @@
 					</tr>
 				</c:forEach>
 			</table>
-			<br /> <input type="button" id="button2" value="여행지 작성하기"
-				onclick="location.href='add'"> <br> <br> <br>
-			<br> <br>
+			 -->
+			<br /> 
+			<p align=center style="font-family: 'Nanum Gothic';">
+				여핼지뿐만 아니라 맛집들도 궁금하다고요?<br>TripAndFood은 오사카의 맛집, Food 페이지도 있습니다!<br>
+				다른 분들께서 오사카를 여행하면서 방문하고 직접 기록한 음식들도 둘러보세요!
+			</p><br>
+			<input type="button" id="button2" value="음식점도 보러가기"
+				onclick="location.href='../food/foodlist'">
+			<br> <br><br><Br>
 		</div>
 	</div>
 	<br>
@@ -135,7 +171,7 @@
 		<p>
 			@Copyright By <a
 				href="http://hyeeunwork1.dothome.co.kr/newindex.html"
-				data-toggle="tooltip" title="Visit Hyeeun's homepage">TripAndFood</a>
+				data-toggle="tooltip" title="Visit TripAndFood's homepage">TripAndFood</a>
 		</p>
 	</footer>
 

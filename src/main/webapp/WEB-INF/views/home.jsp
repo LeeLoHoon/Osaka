@@ -102,7 +102,7 @@
 
 	<div class="w3-content" style="max-width: 1100px;">
 
-		<div id="first">About Osaka</div>
+		<div id="first3">About Osaka</div>
 
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
@@ -282,7 +282,7 @@
 		<p>
 			@Copyright By <a
 				href="http://hyeeunwork1.dothome.co.kr/newindex.html"
-				data-toggle="tooltip" title="Visit Hyeeun's homepage">TripAndFood</a>
+				data-toggle="tooltip" title="Visit TripAndFood's homepage">TripAndFood</a>
 		</p>
 	</footer>
 
