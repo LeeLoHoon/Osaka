@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+#contain {
+	margin: 50px;
+}
+
+h1 {
+	font-weight: bold;
+}
+
+#button2 {
+	width: 200px;
+	height: 40px;
+	border: 2px solid rgb(138, 95, 255);
+	background-color: white;
+	color: rgb(138, 95, 255);
+	padding: 5px;
+	font-size: 100%;
+	border-radius: 5rem;
+	margin-left: 40%
+}
+
+#button2:hover {
+	background-color: rgb(138, 95, 255);
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#popularlist {
+	font-family: 'Nanum Gothic';
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#popularlist td, #list th {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: center;
+}
+
+#popularlist tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#popularlist tr:hover {
+	background-color: #ddd;
+}
+
+#popularlist th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: gray;
+	color: white;
+}

@@ -1,0 +1,291 @@
+@charset "UTF-8";
+
+body {
+	font: 400 15px/1.8 Lato, sans-serif;
+	color: black;
+	background: -webkit-linear-gradient(90deg, rgb(251, 194, 235),
+		rgb(166, 193, 238));
+	background: linear-gradient(90deg, rgb(251, 194, 235),
+		rgb(166, 193, 238));
+	background-attachment: scroll, fixed;
+	background-repeat: repeat;
+	background-size: 100%;
+	background-position: bottom;
+}
+
+.w3-content {
+	background-color: white;
+	border-radius: 0.5rem;
+}
+
+#first {
+	background-color: white;
+	width: 95%;
+	color: rgba(0, 0, 0, 0.5);
+	margin: 0 auto;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	line-height: 3.5rem;
+	font-style: italic;
+	margin-top: 150px;
+	padding-left: 15px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#lastbottom {
+	background-color: white;
+	width: 95%;
+	color: white;
+	margin: 0 auto;
+	padding-left: 15px;
+	border-bottom-left-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	line-height: 3.5rem;
+	font-style: italic;
+	border-bottom-left-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	line-height: 3.5rem;
+	font-style: italic;
+	margin-bottom: 150px;
+	border-top: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#contact {
+	margin-bottom: 100px;
+}
+
+.container {
+	padding: 80px 120px;
+}
+
+@media ( max-width : 600px) {
+	.carousel-caption {
+		display: none;
+		/* Hide the carousel text when the screen is less than 600 pixels wide */
+	}
+}
+
+.nav-tabs li a {
+	color: #777;
+}
+
+.navbar {
+	font-family: Montserrat, sans-serif;
+	margin-bottom: 0;
+	background-color: #2d2d30 !important;
+	border: 0;
+	font-size: 11px !important;
+	letter-spacing: 4px;
+	opacity: 0.9;
+}
+
+.navbar li a, .navbar .navbar-brand {
+	color: #d5d5d5 !important;
+}
+
+.navbar-nav li a:hover {
+	color: #fff !important;
+}
+
+.navbar-nav li.active a {
+	color: #fff !important;
+	background-color: #29292c !important;
+}
+
+footer {
+	background-color: #2d2d30;
+	color: #f5f5f5;
+	padding: 32px;
+}
+
+footer a {
+	color: #f5f5f5;
+}
+
+footer a:hover {
+	color: #777;
+	text-decoration: none;
+}
+
+.form-control {
+	border-radius: 0;
+}
+
+textarea {
+	resize: none;
+}
+
+#icons {
+	position: relative;
+	top: 0px;
+	float: right;
+	padding: 0 40px;
+}
+
+#icons li {
+	float: left;
+	padding: 0 25px;
+}
+
+#icons a {
+	line-height: 0px;
+	display: block;
+	width: 8px;
+	height: 8px;
+	font-size: 10px;
+	text-align: center;
+}
+
+table {
+	border: 1px solid black;
+	align: center;
+}
+
+th {
+	background-color: gray;
+	color: white;
+}
+
+#pc {
+	font-style: italic;
+	font-size: 1.5em;
+}
+
+#pc2 {
+	font-size: 1.5em;
+}
+
+#button1 {
+	width: 120px;
+	height: 40px;
+	border: 2px solid rgb(138, 95, 255);
+	background-color: white;
+	color: rgb(138, 95, 255);
+	padding: 5px;
+	font-size: 100%;
+	border-radius: 5rem;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#button1:hover {
+	background-color: rgb(138, 95, 255);
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#formlast {
+	margin-top: 0px;
+	position: relative;
+	left: 80%;
+	width: 300px;
+}
+
+input[type="text"] {
+	width: 170px;
+	transition: width 0.4s ease-in-out;
+	padding: .8em .5em; /* 여백 설정 */
+	margin: 10px;
+	border-style: none;
+	border-bottom: 1px solid;
+}
+
+input[type="text"]:hover {
+	width: 75%;
+	background: linear-gradient(90deg, rgb(251, 194, 235),
+		rgb(166, 193, 238));
+	border-radius: 0.25rem;
+}
+
+input[type="text"]:focus {
+	width: 75%;
+	background: linear-gradient(90deg, rgb(251, 194, 235),
+		rgb(166, 193, 238));
+	border-radius: 0.25rem;
+}
+
+input[type="password"] {
+	width: 170px;
+	transition: width 0.4s ease-in-out;
+	padding: .8em .5em; /* 여백 설정 */
+	margin: 10px;
+	border-style: none;
+	border-bottom: 1px solid;
+}
+
+input[type="password"]:hover {
+	width: 75%;
+	background: linear-gradient(90deg, rgb(251, 194, 235),
+		rgb(166, 193, 238));
+	border-radius: 0.25rem;
+}
+
+input[type="password"]:focus {
+	width: 75%;
+	background: linear-gradient(90deg, rgb(251, 194, 235),
+		rgb(166, 193, 238));
+	border-radius: 0.25rem;
+}
+
+select input {
+	width: 150px;
+	padding: .8em; /* 여백 설정 */
+	margin: 10px;
+	border-style: none;
+	border-bottom: 1px solid;
+}
+
+input[type="radio"] {
+	padding: 10px; /* 여백 설정 */
+	margin: 10px;
+}
+
+textarea {
+	width: 170px;
+	transition: width 0.4s ease-in-out;
+	padding: .8em; /* 여백 설정 */
+	margin: 10px;
+	border-style: none;
+	border-bottom: 1px solid;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+textarea:hover {
+	width: 75%;
+	background: linear-gradient(90deg, rgb(251, 194, 235),
+		rgb(166, 193, 238));
+	border-radius: 0.25rem;
+}
+
+#div {
+	background-color: white;
+}
+
+#edit {
+	padding: 10px;
+}
+
+#edit td {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#edit td:nth-child(1) {
+	border: 1px solid #ddd;
+	background-color: #2d2d30;
+	color: white;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	width: 125px;
+}
+
+.photo {
+	width: 500px;
+}
+
+#edit td:hover {
+	background: linear-gradient(90deg, rgb(251, 194, 235),
+		rgb(166, 193, 238));
+}
