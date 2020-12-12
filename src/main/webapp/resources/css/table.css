@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+#contain {
+	margin: 50px;
+}
+
+h1 {
+	font-weight: bold;
+}
+
+#first2 {
+	background-color: white;
+	width: 95%;
+	color: rgba(0, 0, 0, 0.5);
+	margin: 0 auto;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	line-height: 3.5rem;
+	font-style: italic;
+	margin-top: 150px;
+	padding-left: 15px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#button2 {
+	width: 200px;
+	height: 40px;
+	border: 2px solid rgb(138, 95, 255);
+	background-color: white;
+	color: rgb(138, 95, 255);
+	padding: 5px;
+	font-size: 100%;
+	border-radius: 5rem;
+	margin-left: 40%
+}
+
+#button2:hover {
+	background-color: rgb(138, 95, 255);
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#popularlist {
+	font-family: 'Nanum Gothic';
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#popularlist td, #list th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#list th {
+	text-align: center;
+}
+
+#td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+}
+
+#popularlist tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#popularlist tr:hover {
+	background-color: #ddd;
+}
+
+#popularlist th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: gray;
+	color: white;
+	text-align: center;
+}
+
+#tablelist {
+	list-style: none;
+	padding-left: 0px;
+	font-family: 'Nanum Gothic';
+}
+
+#name {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+#edit {
+	padding: 10px;
+}
+
+#edit td {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#edit td:nth-child(1) {
+	border: 1px solid #ddd;
+	background-color: #2d2d30;
+	color: white;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	width: 125px;
+}
+
+#pc2 {
+	font-size: 1.5em;
+}
+
+.photo {
+	width: 500px;
+}
+
+#lo {
+	color: skyblue;
+}
+
+#des {
+	/*background-color: #efefef;*/
+	
+}
+
+#pid {
+	text-align: center;
+}
+
+#photo {
+	text-align: center
+}
+
+#last_list {
+	text-align: right;
+	color: gray;
+}
