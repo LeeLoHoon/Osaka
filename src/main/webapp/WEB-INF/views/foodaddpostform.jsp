@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Osaka:Trip</title>
+<title>Osaka:Food</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -37,6 +37,8 @@
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css"
 	href="${path}/resources/css/note.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css"
 	href="${path}/resources/css/table.css">
 <style>
@@ -44,7 +46,7 @@
 
 </head>
 <body>
-<body id="tour" data-spy="scroll" data-target=".navbar" data-offset="50">
+<body id="food" data-spy="scroll" data-target=".navbar" data-offset="50">
 
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
@@ -82,78 +84,48 @@
 		<div id="first2">About Osaka</div>
 		<br> <br> <br>
 		<div id="contain">
-			<h1 align=center style="font-family: 'Nanum Gothic';">POPULAR</h1>
+			<h1 align=center style="font-family: 'Nanum Gothic';">Add Post</h1>
 			<br>
-			<p align=center style="font-family: 'Nanum Gothic';">
-				TripAndFood 중 Trip 부분입니다.<br> 다른 분들께서 오사카를 여행하면서 방문하고 직접 기록한
-				장소들을 둘러보세요!<br> 오사카를 여행할 때 갔던 장소들이나 사진들을 기록하고 공유하고 싶으신가요?<br>목록
-				밑에 있는 버튼을 눌러 추억을 남겨보세요.
-			</p>
-			<br> <br> <input type="button" id="button2"
-				value="여행지 작성하기" onclick="location.href='add'"> <br> <br>
-			<br>
-
-			<table id="popularlist" width="90%">
-				<tr>
-					<th>#</th>
-					<th>사진</th>
-					<th>설명</th>
-				</tr>
-				<c:forEach items="${popularlist}" var="u" varStatus="status">
-					<tr>
-						<td width="10%" id="pid">${fn:length(popularlist)-status.index }</td>
-						<td width="30%" id="photo"><img src="${u.getPhoto()}"
-							class="photo" height=150px></td>
-						<td id="td">
-							<ul id="tablelist">
-								<li id="name">${u.name}</li>
-								<li>${u.regdate}</li>
-								<li id="lo">${u.location}</li>
-								<li id="des">${u.description}</li>
-								<li id="last_list"><a href="view/${u.pid}">상세보기</a> | <a
-									href="editform/${u.pid}"> 편집하기</a> | <a
-									href="deleteok/${u.pid}">삭제하기</a></li>
-							</ul>
-					</tr>
-				</c:forEach>
-			</table>
-			<br> <br> <br>
-			<!-- 
-			<table id="popularlist" width="90%">
-				<tr>
-					<th>#</th>
-					<th>이름</th>
-					<th>설명</th>
-					<th>위치</th>
-					<th>사진</th>
-					<th>좋아요 수</th>
-					<th>날짜</th>
-					<th>수정</th>
-					<th>삭제</th>
-				</tr>
-				<c:forEach items="${popularlist}" var="u">
-					<tr>
-						<td>${u.pid}</td>
-						<td>${u.name}</td>
-						<td>${u.description}</td>
-						<td>${u.location}</td>
-						<td>${u.photo}</td>
-						<td>${u.likes}</td>
-						<td>${u.regdate}</td>
-						<td><a href="editform/${u.pid}">편집하기</a></td>
-						<td><a href="deleteok/${u.pid}">삭제하기</a></td>
-					</tr>
-				</c:forEach>
-			</table>
-			 -->
+			<p align=center style="font-family: 'Nanum Gothic';">공유하거나 추억으로
+				남기고 싶은 음식점에 대해 자유롭게 작성하시면 됩니다!</p>
+			<p id="pc2" align=center>&#128516;</p>
+			<br> <br>
 			
-			<p align=center style="font-family: 'Nanum Gothic';">
-				여핼지뿐만 아니라 맛집들도 궁금하다고요?<br>TripAndFood은 오사카의 맛집, Food 페이지도 있습니다!<br>
-				다른 분들께서 오사카를 여행하면서 방문하고 직접 기록한 음식들도 둘러보세요!
-			</p>
-			<br> <input type="button" id="button2" value="음식점도 보러가기"
-				onclick="location.href='../food/foodlist'"> <br> <br>
-			<br> <Br>
+			<form action="addok" method="post" enctype="multipart/form-data">
+				<table id="edit" align=center>
+					<tr>
+						<td>음식점 이름</td>
+						<td><input type="text" name="name" /></td>
+					</tr>
+					<tr>
+						<td>위치</td>
+						<td><input type="text" name="location" /></td>
+					</tr>
+					<tr>
+						<td>전화번호</td>
+						<td><input type="text" name="phone" /></td>
+					</tr>
+					<tr>
+						<td>사진</td>
+						<td><input type="file" name="photo" /></td>
+					</tr>
+					<tr>
+						<td>설명</td>
+						<td><textarea cols="50" rows="5" name="description"></textarea></td>
+					</tr>
+
+				</table>
+
+				<br> <br> <br>
+
+
+				<button type="submit" id="button2">추가하기</button>
+				<br> <br>
+				<button type="button" id="button2"
+					onclick="location.href='foodlist'">목록 보기</button>
+			</form>
+			<br> <br> <br> <br> <Br>
+			
 		</div>
 	</div>
 	<br>

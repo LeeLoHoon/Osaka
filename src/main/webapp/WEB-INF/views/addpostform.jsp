@@ -91,7 +91,7 @@
 			<p id="pc2" align=center>&#128516;</p>
 			<br> <br>
 			
-			<form action="../popular/saveImage" method="post" enctype="multipart/form-data">
+			<form action="../popular/addok" method="post" enctype="multipart/form-data">
 				<table id="edit" align=center>
 					<tr>
 						<td>관광지 이름</td>

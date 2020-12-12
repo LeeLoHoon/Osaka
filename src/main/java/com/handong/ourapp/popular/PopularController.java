@@ -47,23 +47,24 @@ public class PopularController {
 	public String addPost() {
 		return "addpostform";
 	}
-
 	     
 	/**
 	 * 파일태그를 위한 폼태그
 	 * @return
 	 */
+	/*
 	@RequestMapping(value="/formFile")
 	public String formFile() {
 	    return "formFile";
-	}
+	}*/
 	 
 	/**
 	 * 파일처리 컨트롤러
 	 * @param vo
 	 * @return
 	 */
-	@RequestMapping(value="/saveImage")
+	/*
+	@RequestMapping(value="/addok", method = RequestMethod.POST)
 	public String saveImage(PopularVO vo) {
 	    try {
 	        Map<String, Object> hmap = new HashMap<String, Object>();
@@ -77,19 +78,29 @@ public class PopularController {
 	    return "redirect:/popular/popularlist";
 	}
 
+*/
 
-
-	/*
-	 * @RequestMapping(value = "/addok", method = RequestMethod.GET) public String
-	 * addPostOk(PopularVO vo) { if (popularService.insertPopular(vo) == 0)
-	 * System.out.println("데이터 추가 실패"); else System.out.println("데이터 추가 성공"); return
-	 * "redirect:popularlist"; }
-	 */
+	
+	@RequestMapping(value = "/addok", method = RequestMethod.POST)
+	public String addPostOk(PopularVO vo) {
+		if (popularService.insertPopular(vo) == 0)
+			System.out.println("데이터 추가 실패");
+		else System.out.println("데이터 추가 성공");
+		return "redirect:popularlist";
+	}
+	
 	@RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
 	public String editPost(@PathVariable("id") int id, Model model) {
 		PopularVO popularVO = popularService.getPopular(id);
 		model.addAttribute("u", popularVO);
 		return "editform";
+	}
+	
+	@RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
+	public String viewPost(@PathVariable("id") int id, Model model) {
+		PopularVO popularVO = popularService.getPopular(id);
+		model.addAttribute("u", popularVO);
+		return "view";
 	}
 
 	@RequestMapping(value = "/editok", method = RequestMethod.POST)

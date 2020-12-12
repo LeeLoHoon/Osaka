@@ -98,15 +98,11 @@
 					<th>사진</th>
 					<th>설명</th>
 				</tr>
-				<c:forEach items="${foodlist}" var="u">
+				<c:forEach items="${foodlist}" var="u" varStatus="status">
 					<tr>
-						<td width="10%" id="pid">${fn:length(popularlist)-status.index }</td>
-						<td width="30%" id="photo">
-						
-						<img
-							src="${u.getPhoto()}"
-							class="photo" height=150px>
-					</td>
+						<td width="10%" id="fid">${fn:length(foodlist)-status.index }</td>
+						<td width="30%" id="photo"><img src="${u.getPhoto()}"
+							class="photo" height=150px></td>
 						<td id="td">
 							<ul id="tablelist">
 								<li id="name">${u.name}</li>

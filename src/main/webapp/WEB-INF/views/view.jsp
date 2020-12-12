@@ -41,6 +41,8 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css"
 	href="${path}/resources/css/table.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 <style>
 </style>
 
@@ -84,46 +86,49 @@
 		<div id="first2">About Osaka</div>
 		<br> <br> <br>
 		<div id="contain">
-			<h1 align=center style="font-family: 'Nanum Gothic';">Edit Post</h1>
+			<h1 align=center style="font-family: 'Nanum Gothic';">${u.name }</h1>
 			<br>
-			<p align=center style="font-family: 'Nanum Gothic';">어떤 부분을 수정하고 싶으신가요?<br>다른 분들께서 적으신 추억들은
-			최대한 훼손하지않도록 조심합시다 :)</p>
-			<p id="pc2" align=center>&#128516;</p>
+			<p align=center style="font-family: 'Nanum Gothic';">상세 보기
+				페이지입니다.</p>
 			<br> <br>
-			
+
 			<form action="../editok" method="post" enctype="multipart/form-data">
-				<input type="hidden" name="u" value="u"/>
-				<input type="hidden" name="pid" value="${u.pid }"/>
+				<input type="hidden" name="u" value="u" /> <input type="hidden"
+					name="pid" value="${u.pid }" />
 				<table id="edit" align=center>
 					<tr>
-						<td>관광지 이름</td>
-						<td><input type="text" name="name" value="${u.name }"/></td>
+						<td>추천한 날짜</td>
+						<td>${u.regdate }</td>
 					</tr>
 					<tr>
 						<td>위치</td>
-						<td><input type="text" name="location" value="${u.location }"/></td>
+						<td>${u.location }</td>
 					</tr>
 					<tr>
 						<td>사진</td>
-						<td><input type="file" name="photo" value="${u.photo }" /></td>
+						<td>${u.photo }</td>
 					</tr>
 					<tr>
 						<td>설명</td>
-						<td><textarea cols="50" rows="5" name="description">${u.description }</textarea></td>
+						<td>${u.description }</td>
+					</tr>
+					<tr>
+						<td>좋아요 수</td>
+						<td>${u.likes }</td>
 					</tr>
 
 				</table>
 
 				<br> <br> <br>
 
-
-				<button type="submit" id="button2">수정하기</button>
+				<button type="submit" id="button2" onclick="click();">
+					<i class="far fa-heart"> 좋아요 누르기</i>
+				</button>
 				<br> <br>
-				<button type="button" id="button2"
-					 onclick="history.back()">뒤로</button>
+				<button type="button" id="button2" onclick="history.back()">뒤로</button>
 			</form>
 			<br> <br> <br> <br> <Br>
-			
+
 		</div>
 	</div>
 	<br>
@@ -170,6 +175,9 @@
 								});
 							});
 				})
+		function click(){
+				${u.likes}++;
+			}
 	</script>
 </body>
 </html>

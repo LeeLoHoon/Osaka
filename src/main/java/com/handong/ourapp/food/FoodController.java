@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.handong.ourapp.popular.PopularVO;
+
 
 
 @Controller
@@ -33,10 +35,10 @@ public class FoodController{
 	
 	@RequestMapping(value="/add",method=RequestMethod.GET)
 	public String addPost() {
-		return "addpostform";
+		return "foodaddpostform";
 	}
 	   
-	@RequestMapping(value="/addok",method=RequestMethod.GET)
+	@RequestMapping(value="/addok",method=RequestMethod.POST)
 	public String addPostOk(FoodVO vo) {
 		if(foodService.insertFood(vo)==0)
 			System.out.println("데이터 추가 실패");
@@ -49,7 +51,7 @@ public class FoodController{
 	public String editPost(@PathVariable("id") int id, Model model) {
 		FoodVO popularVO =foodService.getFood(id);
 		model.addAttribute("u", popularVO);
-		return "editform";
+		return "foodeditform";
 	}
 	
 	@RequestMapping(value="/editok",method=RequestMethod.POST)
@@ -71,6 +73,11 @@ public class FoodController{
 		return "redirect:../foodlist";
 	}
 	   
-	   
+	@RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
+	public String viewPost(@PathVariable("id") int id, Model model) {
+		FoodVO popularVO = foodService.getFood(id);
+		model.addAttribute("u", popularVO);
+		return "foodview";
+	}   
 	
 }
