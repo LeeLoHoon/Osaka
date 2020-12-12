@@ -110,7 +110,7 @@
 					</tr>
 					<tr>
 						<td>사진</td>
-						<td>${u.photo }</td>
+						<td><img src="${path}/resources/img/ramen.jpg" height=250px></td>
 					</tr>
 					<tr>
 						<td>설명</td>
@@ -125,9 +125,8 @@
 
 				<br> <br> <br>
 
-				<button type="submit" id="button2" onclick="click();">
-					<i class="far fa-heart"> 좋아요 누르기</i>
-				</button>
+				<br>
+				
 				<br> <br>
 				<button type="button" id="button2" onclick="history.back()">뒤로</button>
 			</form>

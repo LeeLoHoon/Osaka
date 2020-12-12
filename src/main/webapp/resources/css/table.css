@@ -31,7 +31,8 @@ h1 {
 	padding: 5px;
 	font-size: 100%;
 	border-radius: 5rem;
-	margin-left: 40%
+	margin-left: 40%;
+	font-family: 'Nanum Gothic';
 }
 
 #button2:hover {

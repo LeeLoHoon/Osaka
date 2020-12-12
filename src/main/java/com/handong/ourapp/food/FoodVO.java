@@ -2,6 +2,8 @@ package com.handong.ourapp.food;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class FoodVO {
 
 	public int getFid() {
@@ -34,10 +36,10 @@ public class FoodVO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getPhoto() {
+	public MultipartFile getPhoto() {
 		return photo;
 	}
-	public void setPhoto(String photo) {
+	public void setPhoto(MultipartFile photo) {
 		this.photo = photo;
 	}
 	public int getLikes() {
@@ -57,7 +59,7 @@ public class FoodVO {
 	private String description;
 	private String location;
 	private String phone;
-	private String photo;
+	private MultipartFile photo;
 	private int likes;
 	private Date regdate;
 	

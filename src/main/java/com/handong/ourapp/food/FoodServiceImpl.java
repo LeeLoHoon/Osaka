@@ -1,6 +1,8 @@
 package com.handong.ourapp.food;
 
+import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +15,7 @@ public class FoodServiceImpl implements FoodService{
 	
 	@Override
 	public int insertFood(FoodVO vo) {
-		return FoodDAO.insertBoard(vo);
+		return FoodDAO.insertFood(vo);
 	}
 
 	@Override
@@ -38,6 +40,18 @@ public class FoodServiceImpl implements FoodService{
 	public List<FoodVO> getFoodList() {
 		// TODO Auto-generated method stub
 		return FoodDAO.getFoodList();
+	}
+
+	@Override
+	public void saveImage(Map<String, Object> hmap) throws SQLException {
+		// TODO Auto-generated method stub
+		FoodDAO.saveImage(hmap);
+	}
+
+	@Override
+	public Map<String, Object> getByteImage() {
+		// TODO Auto-generated method stub
+		return FoodDAO.getByteImage();
 	}
 	
 	

@@ -211,7 +211,7 @@
 				</div>
 
 				<div class="w3-col m6 w3-padding-large w3-hide-small">
-					<img src="${path}/resources/img/castle2.jpg"
+					<img src="${path}/resources/img/sushi.jpg"
 						class="w3-round w3-image" alt="Table Setting" width="600"
 						height="750">
 				</div>

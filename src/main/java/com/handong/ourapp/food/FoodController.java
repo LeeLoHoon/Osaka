@@ -1,5 +1,6 @@
 package com.handong.ourapp.food;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.handong.ourapp.popular.PopularVO;
 
@@ -37,13 +40,27 @@ public class FoodController{
 	public String addPost() {
 		return "foodaddpostform";
 	}
-	  
+	  /*
 	@RequestMapping(value="/addok")
 	public String addPostOk(FoodVO vo) {
 		if(foodService.insertFood(vo)==0)
 			System.out.println("데이터 추가 실패");
 		else
 			System.out.println("데이터 추가 성공");
+		return "redirect:foodlist";
+	}
+	*/
+	@RequestMapping(value="/addok")
+	public String addPostOk(@RequestParam("photo") MultipartFile photo,FoodVO vo) throws IOException {
+		
+	
+		//vo.setPhoto(photo);
+		
+		if(foodService.insertFood(vo)==0)
+			System.out.println("데이터 추가 실패");
+		else
+			System.out.println("데이터 추가 성공");
+		
 		return "redirect:foodlist";
 	}
 	

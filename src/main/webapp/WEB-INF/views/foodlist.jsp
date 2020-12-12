@@ -102,13 +102,8 @@
 					<tr>
 
 						<td width="10%" id="pid">${u.fid}</td>
-						<td width="30%" id="photo">
-						
-						<img
-							src="${u.getPhoto()}"
-							class="photo" height=150px>
-					</td>
-					
+						<td width="30%" id="photo"><img src="${path}/resources/img/ramen.jpg" height=150px></td>
+
 						<td id="td">
 							<ul id="tablelist">
 								<li id="name">${u.name}</li>
@@ -116,15 +111,16 @@
 								<li id="lo">${u.location}</li>
 								<li id="lo">${u.phone}</li>
 								<li id="des">${u.description}</li>
-								<li id="last_list"><a href="editform/${u.fid}">편집하기</a> | <a
-									href="deleteok/${u.fid}">삭제하기</a></li>
+								<li id="last_list"><a href="view/${u.fid}">상세보기</a> | <a
+									href="editform/${u.fid}">편집하기</a> | <a href="deleteok/${u.fid}">삭제하기</a></li>
 							</ul>
-						
 					</tr>
 				</c:forEach>
 			</table>
-<br><br><br>
-<!-- 
+			<br>
+			<br>
+			<br>
+			<!-- 
 			<table id="popularlist" width="90%">
 				<tr>
 					<th>#</th>
@@ -152,14 +148,16 @@
 				</c:forEach>
 			</table>
 			 -->
-			<br /> 
+			<br />
 			<p align=center style="font-family: 'Nanum Gothic';">
-				맛집뿐만 아니라 여행지들도 궁금하다고요?<br>TripAndFood은 오사카의 관광지, Trip 페이지도 있습니다!<br>
-				다른 분들께서 오사카를 여행하면서 방문하고 직접 기록한 명소들도 둘러보세요!
-			</p><br>
-			<input type="button" id="button2" value="관광지도 보러가기"
-				onclick="location.href='../popular/popularlist'">
-			<br> <br><br><Br>
+				맛집뿐만 아니라 여행지들도 궁금하다고요?<br>TripAndFood은 오사카의 관광지, Trip 페이지도
+				있습니다!<br> 다른 분들께서 오사카를 여행하면서 방문하고 직접 기록한 명소들도 둘러보세요!
+			</p>
+			<br> <input type="button" id="button2" value="관광지도 보러가기"
+				onclick="location.href='../popular/popularlist'"> <br>
+			<br>
+			<br>
+			<Br>
 		</div>
 	</div>
 	<br>

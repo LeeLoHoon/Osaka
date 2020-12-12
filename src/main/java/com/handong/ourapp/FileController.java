@@ -3,12 +3,16 @@ package com.handong.ourapp;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.handong.ourapp.popular.PopularDAO;
 
 @Controller
 public class FileController {
@@ -55,4 +59,4 @@ public class FileController {
 		return "redirect:popularlist";
 		
 	}
-}
+	}

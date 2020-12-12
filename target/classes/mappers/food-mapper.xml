@@ -19,5 +19,13 @@
 	<select id="getFoodList" resultType="food">
 		select * from FOOD order by fid desc
 	</select>
+	<insert id="saveImage" parameterType="java.util.Map">
+		INSERT INTO FOOD
+		VALUES(#{photo})
+	</insert>
+	<select id="getByteImage" resultType="java.util.Map">
+		select photo from FOOD where
+		fid=#{fid}
+	</select>
 </mapper>
 

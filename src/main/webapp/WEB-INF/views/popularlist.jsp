@@ -40,6 +40,7 @@
 <link rel="stylesheet" type="text/css"
 	href="${path}/resources/css/table.css">
 <style>
+
 </style>
 
 </head>
@@ -103,13 +104,8 @@
 					<tr>
 
 						<td width="10%" id="pid">${u.pid}</td>
-						<td width="10%" id="photo">${u.getPhoto()}</td>
-						<td width="30%" id="photo">
-					
-						<img
-							src="data:image/jpg;base64,${Base64.encodeBase64(u.getPhoto())}"
-							class="photo" height=150px>
-					</td>
+						<td width="10%" id="photo"><img src="${path}/resources/img/castle3.jpg" height=150px></td>					
+						
 						<td id="td">
 							<ul id="tablelist">
 								<li id="name">${u.name}</li>
