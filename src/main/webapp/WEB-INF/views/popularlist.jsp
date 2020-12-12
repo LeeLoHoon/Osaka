@@ -104,7 +104,7 @@
 					<tr>
 
 						<td width="10%" id="pid">${u.pid}</td>
-						<td width="10%" id="photo"><img src="${path}/resources/img/castle3.jpg" height=150px></td>					
+						<td width="10%" id="photo"><img src="${path}/resources/img/popular${u.pid}.jpg" height=150px></td>					
 						
 						<td id="td">
 							<ul id="tablelist">

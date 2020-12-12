@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Food">
+	<insert id="insertFood">
+		insert into FOOD (name, description, location, phone, photo, likes) values
+		(#{name} , #{description} , #{location} , #{phone}, #{photo}, #{likes})
+	</insert>
+	<update id="updateFood">
+		update FOOD
+		set name=#{name}, description=#{description}, location=#{location}, phone=#{phone}, 
+		photo=#{photo}, likes=#{likes} where fid=#{fid}
+	</update>
+	<delete id="deleteFood">
+		delete from FOOD where fid=#{fid}
+	</delete>
+	<select id="getFood" resultType="food">
+		select * from FOOD where fid=#{fid}
+	</select>
+	<select id="getFoodList" resultType="food">
+		select * from FOOD order by fid desc
+	</select>
+	<insert id="saveImage" parameterType="java.util.Map">
+		INSERT INTO FOOD
+		VALUES(#{photo})
+	</insert>
+	<select id="getByteImage" resultType="java.util.Map">
+		select photo from FOOD where
+		fid=#{fid}
+	</select>
+</mapper>
+
