@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+
 @Controller
 @RequestMapping(value = "/popular")
 public class PopularController {
@@ -48,6 +49,18 @@ public class PopularController {
 		return "addpostform";
 	}
 
+	@RequestMapping(value="/addok")
+	public String addPostOk(PopularVO vo) {
+		MultipartFile uploadfile =vo.getPhoto();
+		
+		if(uploadfile!=null) {
+			if(popularService.insertPopular(vo)==0)
+				System.out.println("데이터 추가 실패");
+			else
+				System.out.println("데이터 추가 성공");
+		}
+		return "redirect:popularlist";
+	}
 	     
 	/**
 	 * 파일태그를 위한 폼태그
@@ -66,6 +79,7 @@ public class PopularController {
 	@RequestMapping(value="/saveImage")
 	public String saveImage(PopularVO vo) {
 	    try {
+	    
 	        Map<String, Object> hmap = new HashMap<String, Object>();
 	        hmap.put("photo", vo.getPhoto().getBytes());
 	        dao.saveImage(hmap);   
