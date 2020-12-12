@@ -101,11 +101,7 @@
 				</tr>
 				<c:forEach items="${popularlist}" var="u" varStatus="status">
 					<tr>
-<<<<<<< HEAD
-						<td width="10%" id="pid">${fn:length(popularlist)-status.index }</td>
-						<td width="30%" id="photo"><img src="${u.getPhoto()}"
-							class="photo" height=150px></td>
-=======
+
 						<td width="10%" id="pid">${u.pid}</td>
 						<td width="10%" id="photo">${u.getPhoto()}</td>
 						<td width="30%" id="photo">
@@ -114,7 +110,6 @@
 							src="data:image/jpg;base64,${Base64.encodeBase64(u.getPhoto())}"
 							class="photo" height=150px>
 					</td>
->>>>>>> detail
 						<td id="td">
 							<ul id="tablelist">
 								<li id="name">${u.name}</li>

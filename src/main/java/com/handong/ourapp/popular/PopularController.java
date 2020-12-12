@@ -48,9 +48,7 @@ public class PopularController {
 	public String addPost() {
 		return "addpostform";
 	}
-<<<<<<< HEAD
-=======
-
+	
 	@RequestMapping(value="/addok")
 	public String addPostOk(@RequestParam("photo1") MultipartFile photo,PopularVO vo) {
 		
@@ -69,59 +67,7 @@ public class PopularController {
 		
 		return "redirect:popularlist";
 	}
->>>>>>> detail
-	     
-	/**
-	 * 파일태그를 위한 폼태그
-	 * @return
-	 */
-	/*
-	@RequestMapping(value="/formFile")
-	public String formFile() {
-	    return "formFile";
-	}*/
-	 
-	/**
-	 * 파일처리 컨트롤러
-	 * @param vo
-	 * @return
-	 */
-	/*
-	@RequestMapping(value="/addok", method = RequestMethod.POST)
-	public String saveImage(PopularVO vo) {
-	    try {
-	    
-	        Map<String, Object> hmap = new HashMap<String, Object>();
-	        hmap.put("photo", vo.getPhoto());
-	        dao.saveImage(hmap);   
-	        System.out.println("데이터 추가 성공!!!!!!");
-	    } catch (Exception e) {
-	    	System.out.println("데이터 추가 실패");
-	        e.printStackTrace();
-	    }
-	    return "redirect:/popular/popularlist";
-	}
 
-*/
-
-<<<<<<< HEAD
-	
-	@RequestMapping(value = "/addok", method = RequestMethod.POST)
-	public String addPostOk(PopularVO vo) {
-		if (popularService.insertPopular(vo) == 0)
-			System.out.println("데이터 추가 실패");
-		else System.out.println("데이터 추가 성공");
-		return "redirect:popularlist";
-	}
-	
-=======
-
-	/*
-	 * @RequestMapping(value = "/addok", method = RequestMethod.GET) public String
-	 * addPostOk(PopularVO vo) { if (popularService.insertPopular(vo) == 0)
-	 * System.out.println("데이터 추가 실패"); else System.out.println("데이터 추가 성공"); return
-	 * "redirect:popularlist"; }
-	 */
 	
 	@RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
 	public String detailPost(@PathVariable("id") int id, Model model) {
@@ -131,7 +77,6 @@ public class PopularController {
 	}
 	
 	
->>>>>>> detail
 	@RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
 	public String editPost(@PathVariable("id") int id, Model model) {
 		PopularVO popularVO = popularService.getPopular(id);

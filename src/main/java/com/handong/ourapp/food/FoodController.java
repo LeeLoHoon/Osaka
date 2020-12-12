@@ -37,12 +37,8 @@ public class FoodController{
 	public String addPost() {
 		return "foodaddpostform";
 	}
-	   
-<<<<<<< HEAD
-	@RequestMapping(value="/addok",method=RequestMethod.POST)
-=======
+	  
 	@RequestMapping(value="/addok")
->>>>>>> detail
 	public String addPostOk(FoodVO vo) {
 		if(foodService.insertFood(vo)==0)
 			System.out.println("데이터 추가 실패");
