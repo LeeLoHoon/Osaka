@@ -106,7 +106,7 @@
 					</tr>
 					<tr>
 						<td>사진</td>
-						<td><img src="${path}/resources/img/castle3.jpg" height=250px></td>
+						<td><img src="${path}/resources/img/popular${u.pid}.jpg" height=250px></td>
 					</tr>
 					<tr>
 						<td>설명</td>

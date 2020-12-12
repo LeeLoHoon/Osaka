@@ -110,7 +110,7 @@
 					</tr>
 					<tr>
 						<td>사진</td>
-						<td><img src="${path}/resources/img/ramen.jpg" height=250px></td>
+						<td><img src="${path}/resources/img/food${u.fid}.jpg" height=250px></td>
 					</tr>
 					<tr>
 						<td>설명</td>
