@@ -100,7 +100,7 @@
 				</tr>
 				<c:forEach items="${foodlist}" var="u">
 					<tr>
-						<td width="10%" id="pid">${fn:length(popularlist)-status.index }</td>
+						<td width="10%" id="pid">${u.fid}</td>
 						<td width="30%" id="photo">
 						
 						<img

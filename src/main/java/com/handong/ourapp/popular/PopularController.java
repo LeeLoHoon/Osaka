@@ -50,15 +50,21 @@ public class PopularController {
 	}
 
 	@RequestMapping(value="/addok")
-	public String addPostOk(PopularVO vo) {
-		MultipartFile uploadfile =vo.getPhoto();
+	public String addPostOk(@RequestParam("photo1") MultipartFile photo,PopularVO vo) {
 		
-		if(uploadfile!=null) {
-			if(popularService.insertPopular(vo)==0)
-				System.out.println("데이터 추가 실패");
-			else
-				System.out.println("데이터 추가 성공");
+	
+		try {
+			vo.setPhoto(photo.getBytes());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		
+		if(popularService.insertPopular(vo)==0)
+			System.out.println("데이터 추가 실패");
+		else
+			System.out.println("데이터 추가 성공");
+		
 		return "redirect:popularlist";
 	}
 	     
@@ -81,7 +87,7 @@ public class PopularController {
 	    try {
 	    
 	        Map<String, Object> hmap = new HashMap<String, Object>();
-	        hmap.put("photo", vo.getPhoto().getBytes());
+	        hmap.put("photo", vo.getPhoto());
 	        dao.saveImage(hmap);   
 	        System.out.println("데이터 추가 성공!!!!!!");
 	    } catch (Exception e) {
@@ -99,6 +105,15 @@ public class PopularController {
 	 * System.out.println("데이터 추가 실패"); else System.out.println("데이터 추가 성공"); return
 	 * "redirect:popularlist"; }
 	 */
+	
+	@RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
+	public String detailPost(@PathVariable("id") int id, Model model) {
+		PopularVO popularVO = popularService.getPopular(id);
+		model.addAttribute("u", popularVO);
+		return "detailform";
+	}
+	
+	
 	@RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
 	public String editPost(@PathVariable("id") int id, Model model) {
 		PopularVO popularVO = popularService.getPopular(id);

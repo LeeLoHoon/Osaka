@@ -103,7 +103,7 @@
 					</tr>
 					<tr>
 						<td>사진</td>
-						<td><input type="file" name="photo" /></td>
+						<td><input type="file" name="photo1" /></td>
 					</tr>
 					<tr>
 						<td>설명</td>

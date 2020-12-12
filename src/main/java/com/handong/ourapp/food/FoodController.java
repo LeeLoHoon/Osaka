@@ -36,13 +36,20 @@ public class FoodController{
 		return "addpostform";
 	}
 	   
-	@RequestMapping(value="/addok",method=RequestMethod.GET)
+	@RequestMapping(value="/addok")
 	public String addPostOk(FoodVO vo) {
 		if(foodService.insertFood(vo)==0)
 			System.out.println("데이터 추가 실패");
 		else
 			System.out.println("데이터 추가 성공");
 		return "redirect:foodlist";
+	}
+	
+	@RequestMapping(value="/detailform/{id}",method=RequestMethod.GET)
+	public String detailPost(@PathVariable("id") int id, Model model) {
+		FoodVO popularVO =foodService.getFood(id);
+		model.addAttribute("u", popularVO);
+		return "detailform";
 	}
 	
 	@RequestMapping(value="/editform/{id}",method=RequestMethod.GET)
