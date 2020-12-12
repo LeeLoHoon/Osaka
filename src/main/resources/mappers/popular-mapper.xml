@@ -5,7 +5,7 @@
 		insert into POPULAR (name, description, location,
 		photo, likes) values
 		(#{name} , #{description} , #{location} ,
-		#{photo}, #{likes})
+		#{photo, jdbcType=BLOB}, #{likes})
 	</insert>
 	<update id="updatePopular">
 		update POPULAR

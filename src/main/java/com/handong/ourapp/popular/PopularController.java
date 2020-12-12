@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+
 @Controller
 @RequestMapping(value = "/popular")
 public class PopularController {
@@ -47,6 +48,28 @@ public class PopularController {
 	public String addPost() {
 		return "addpostform";
 	}
+<<<<<<< HEAD
+=======
+
+	@RequestMapping(value="/addok")
+	public String addPostOk(@RequestParam("photo1") MultipartFile photo,PopularVO vo) {
+		
+	
+		try {
+			vo.setPhoto(photo.getBytes());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if(popularService.insertPopular(vo)==0)
+			System.out.println("데이터 추가 실패");
+		else
+			System.out.println("데이터 추가 성공");
+		
+		return "redirect:popularlist";
+	}
+>>>>>>> detail
 	     
 	/**
 	 * 파일태그를 위한 폼태그
@@ -67,8 +90,9 @@ public class PopularController {
 	@RequestMapping(value="/addok", method = RequestMethod.POST)
 	public String saveImage(PopularVO vo) {
 	    try {
+	    
 	        Map<String, Object> hmap = new HashMap<String, Object>();
-	        hmap.put("photo", vo.getPhoto().getBytes());
+	        hmap.put("photo", vo.getPhoto());
 	        dao.saveImage(hmap);   
 	        System.out.println("데이터 추가 성공!!!!!!");
 	    } catch (Exception e) {
@@ -80,6 +104,7 @@ public class PopularController {
 
 */
 
+<<<<<<< HEAD
 	
 	@RequestMapping(value = "/addok", method = RequestMethod.POST)
 	public String addPostOk(PopularVO vo) {
@@ -89,6 +114,24 @@ public class PopularController {
 		return "redirect:popularlist";
 	}
 	
+=======
+
+	/*
+	 * @RequestMapping(value = "/addok", method = RequestMethod.GET) public String
+	 * addPostOk(PopularVO vo) { if (popularService.insertPopular(vo) == 0)
+	 * System.out.println("데이터 추가 실패"); else System.out.println("데이터 추가 성공"); return
+	 * "redirect:popularlist"; }
+	 */
+	
+	@RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
+	public String detailPost(@PathVariable("id") int id, Model model) {
+		PopularVO popularVO = popularService.getPopular(id);
+		model.addAttribute("u", popularVO);
+		return "detailform";
+	}
+	
+	
+>>>>>>> detail
 	@RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
 	public String editPost(@PathVariable("id") int id, Model model) {
 		PopularVO popularVO = popularService.getPopular(id);

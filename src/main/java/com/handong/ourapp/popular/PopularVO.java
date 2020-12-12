@@ -30,12 +30,7 @@ public class PopularVO {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public MultipartFile getPhoto() {
-		return photo;
-	}
-	public void setPhoto(MultipartFile photo) {
-		this.photo = photo;
-	}
+
 	public int getLikes() {
 		return likes;
 	}
@@ -48,11 +43,17 @@ public class PopularVO {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
+	public byte[] getPhoto() {
+		return photo;
+	}
+	public void setPhoto(byte[] photo) {
+		this.photo = photo;
+	}
 	private int pid;
 	private String name;
 	private String description;
 	private String location;
-	private MultipartFile photo;
+	private byte[] photo;
 	private int likes;
 	private Date regdate;
 	

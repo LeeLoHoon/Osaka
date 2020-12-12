@@ -91,7 +91,9 @@
 			<p id="pc2" align=center>&#128516;</p>
 			<br> <br>
 			
-			<form action="../popular/addok" method="post" enctype="multipart/form-data">
+
+			<form action="addok" method="post" enctype="multipart/form-data">
+
 				<table id="edit" align=center>
 					<tr>
 						<td>관광지 이름</td>
@@ -103,7 +105,7 @@
 					</tr>
 					<tr>
 						<td>사진</td>
-						<td><input type="file" name="photo" /></td>
+						<td><input type="file" name="photo1" /></td>
 					</tr>
 					<tr>
 						<td>설명</td>

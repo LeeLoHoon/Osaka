@@ -23,7 +23,7 @@ public class PopularDAO{
 	@Autowired
 	private SqlSession query;
 	
-	public int insertPopular(PopularVO vo) {
+	public int insertPopular(PopularVO vo ) {
 		return sqlSession.insert("Popular.insertPopular", vo);
 	}
 	
