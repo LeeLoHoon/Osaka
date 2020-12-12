@@ -119,6 +119,8 @@
 				<br>
 				
 				<br> <br>
+				
+				
 				<button type="button" id="button2" onclick="history.back()">뒤로</button>
 			</form>
 			<br> <br> <br> <br> <Br>

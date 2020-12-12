@@ -97,6 +97,8 @@ public class PopularController {
 		model.addAttribute("u", popularVO);
 		return "view";
 	}
+
+
 	/*
 	@RequestMapping(value="/editok")
 	public String editPostOk(@RequestParam MultipartFile photo,PopularVO vo) {

@@ -51,7 +51,7 @@ public class FoodController{
 	}
 	*/
 	@RequestMapping(value="/addok")
-	public String addPostOk(@RequestParam("photo") MultipartFile photo,FoodVO vo) throws IOException {
+	public String addPostOk(FoodVO vo) throws IOException {
 		
 	
 		//vo.setPhoto(photo);
